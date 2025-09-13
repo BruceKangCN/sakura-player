@@ -17,10 +17,13 @@ mpvqt_dep = dependency('MpvQt', fallback: ['MpvQt', 'mpvqt'])
 
 subdir('src')
 
+win_subsystem = get_option('debug') ? 'console' : 'windows'
+
 executable(
   'sakura-player',
   src,
   moc_files,
   include_directories: inc,
   dependencies : [qt6_dep, mpvqt_dep],
+  win_subsystem: win_subsystem,
 )
