@@ -1,0 +1,16 @@
+{
+	"name": "C++",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"theqtcompany.qt",
+				"mesonbuild.mesonbuild",
+				"Gruntfuggly.todo-tree",
+				"streetsidesoftware.code-spell-checker"
+			]
+		}
+	}
+}
