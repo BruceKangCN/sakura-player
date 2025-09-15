@@ -9,5 +9,5 @@ moc_files = qt.compile_moc(
   sources: [
     'sakura-player.hpp',
   ],
-  dependencies: [mpvqt_dep],
+  dependencies: [mpv_dep],
 )

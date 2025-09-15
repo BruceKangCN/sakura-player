@@ -1,8 +1,0 @@
-[wrap-git]
-url = https://invent.kde.org/libraries/mpvqt.git
-revision = v1.1.1
-depth = 1
-method = cmake
-
-[provide]
-mpvqt = MpvQt::MpvQt
