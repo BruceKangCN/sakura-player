@@ -1,26 +1,17 @@
-#include <QGuiApplication>
-#include <QQmlApplicationEngine>
-#include <QQuickStyle>
+#include "gl/context.hpp"
+#include "gl/window.hpp"
 
-#include "sakura-player.hpp"
-
-int main(int argc, char *argv[])
+int main(int argc, char* argv[])
 {
-    QGuiApplication app(argc, argv);
+    using namespace sakura;
 
-    // 设置应用样式
-    QQuickStyle::setStyle("Material");
+    // TODO: parse command line arguments
+    static_cast<void>(argc);
+    static_cast<void>(argv);
 
-    // 注册MpvPlayer类型到QML
-    qmlRegisterType<SakuraPlayer>("org.bkcloud.SakuraPlayer", 1, 0, "SakuraPlayer");
+    gl::GLFW glfw {};
 
-    QQmlApplicationEngine engine {};
-    engine.loadFromModule("QmlMpvPlayer", "Main");
-    // engine.load("./main.qml");
+    gl::Window window {u8"Sakura Player", {1280, 720}};
 
-    if (engine.rootObjects().isEmpty()) {
-        return -1;
-    }
-
-    return app.exec();
+    return 0;
 }

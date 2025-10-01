@@ -12,18 +12,20 @@ project(
 
 inc = include_directories('src')
 
-qt6_dep = dependency('Qt6', modules: ['Core', 'Quick', 'QuickControls2'])
+# TODO: Glad, RapidJson and a native file dialog library may be also needed
 mpv_dep = dependency('mpv')
+glfw_dep = dependency('glfw3')
 
 subdir('src')
+subdir('third_party')
 
 win_subsystem = get_option('debug') ? 'console' : 'windows'
 
 executable(
   'sakura-player',
   src,
-  moc_files,
-  include_directories: inc,
-  dependencies: [qt6_dep, mpv_dep],
+  imgui_src,
+  include_directories: [inc, imgui_inc],
+  dependencies: [mpv_dep, glfw_dep],
   win_subsystem: win_subsystem,
 )
