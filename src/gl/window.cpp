@@ -20,13 +20,14 @@ Window::Window(std::u8string title, util::Size2D size)
             "Failed to create GLFW window"
         );
     }
+
+    // TODO: should this window be made current?
 }
 
 Window::~Window()
 {
-    if (m_window) {
-        glfwDestroyWindow(m_window);
-    }
+    // `glfwDestroyWindow` is a no-op on `nullptr`
+    glfwDestroyWindow(m_window);
 }
 
 std::int64_t Window::get_native_handle() const noexcept
