@@ -42,7 +42,7 @@ graph TD
 - 主字幕 select
 - 副字幕 select
 - 倍速 slider，搭配倍速 select，后期考虑（通过配置文件）自定义倍速档位
-- 文件标题，搭配媒体信息 button，搭配文件选取 button（暂定位于顶部）
+- 文件标题，搭配媒体信息 button（基于 mediainfo？），搭配文件选取 button（暂定位于顶部）
 - (*) 调试界面
 - (*) 命令菜单，基于 [imgui-command-palette](https://github.com/hnOsmium0001/imgui-command-palette)
 

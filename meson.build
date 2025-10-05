@@ -28,8 +28,16 @@ executable(
   src,
   imgui_src,
   igfd_src,
-  glad_src,
-  include_directories: [inc, imgui_inc, igfd_inc, glad_inc],
-  dependencies: [mpv_dep, glfw_dep],
+  # glad_src,
+  include_directories: [
+    inc,
+    imgui_inc,
+    igfd_inc,
+    # glad_inc,
+  ],
+  dependencies: [
+    mpv_dep,
+    glfw_dep,
+  ],
   win_subsystem: win_subsystem,
 )

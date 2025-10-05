@@ -24,4 +24,9 @@ constexpr Size2D operator-(Size2D lhs, Size2D rhs)
     return {lhs.width - rhs.width, lhs.height - rhs.height};
 }
 
+enum class GraphicsAPI {
+    OpenGL,
+    Vulkan,
+};
+
 } // namespace sakura::util

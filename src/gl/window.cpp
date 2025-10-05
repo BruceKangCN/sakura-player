@@ -1,6 +1,11 @@
+#include <string_view>
+
 #include "exception.hpp"
 
 #include "window.hpp"
+
+using sakura::ex::GLException;
+using sakura::ex::GLExceptionKind;
 
 namespace sakura::gl {
 
@@ -15,13 +20,12 @@ Window::Window(std::u8string title, util::Size2D size)
     );
 
     if (!m_window) {
-        throw ex::GLException(
-            ex::GLExceptionKind::GLFWWindowCreationFailed,
-            "Failed to create GLFW window"
-        );
+        constexpr const char* msg = "Failed to create GLFW window";
+        throw GLException(GLExceptionKind::GLFWWindowCreationFailed, msg);
     }
 
     // TODO: should this window be made current?
+    glfwMakeContextCurrent(m_window);
 }
 
 Window::~Window()

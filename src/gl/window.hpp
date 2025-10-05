@@ -29,6 +29,11 @@ public:
     ///
     /// mainly used to set `wid` for MPV instance.
     std::int64_t get_native_handle() const noexcept;
+
+    bool should_close() const noexcept
+    {
+        return glfwWindowShouldClose(m_window);
+    }
 };
 
 } // namespace sakura::gl
