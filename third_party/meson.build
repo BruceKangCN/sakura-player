@@ -22,8 +22,7 @@ igfd_src = files([
 # - API:
 #   - gl: Version 4.6, Core
 
-# Not used currently
-# glad_inc = include_directories('glad' / 'include')
-# glad_src = files([
-#   'glad' / 'src' / 'gl.c',
-# ])
+glad_inc = include_directories('glad' / 'include')
+glad_src = files([
+  'glad' / 'src' / 'gl.c',
+])

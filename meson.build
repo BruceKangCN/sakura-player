@@ -17,6 +17,7 @@ inc = include_directories('src')
 # TODO: RapidJson and a native file dialog library may be also needed
 mpv_dep = dependency('mpv')
 glfw_dep = dependency('glfw3')
+opengl_dep = dependency('GL')
 
 subdir('src')
 subdir('third_party')
@@ -28,16 +29,17 @@ executable(
   src,
   imgui_src,
   igfd_src,
-  # glad_src,
+  glad_src,
   include_directories: [
     inc,
     imgui_inc,
     igfd_inc,
-    # glad_inc,
+    glad_inc,
   ],
   dependencies: [
     mpv_dep,
     glfw_dep,
+    opengl_dep,
   ],
   win_subsystem: win_subsystem,
 )

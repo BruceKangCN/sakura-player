@@ -1,3 +1,5 @@
+#define IMGUI_IMPL_OPENGL_LOADER_GLAD
+
 #include <cassert>
 #include <cstdio>
 
@@ -56,6 +58,8 @@ void EventLoop::stepFinalize()
 
     switch (m_api) {
     case GraphicsAPI::OpenGL:
+        glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+        glClear(GL_COLOR_BUFFER_BIT);
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
         break;
     case GraphicsAPI::Vulkan:
